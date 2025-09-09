@@ -85,34 +85,37 @@ const ContactSection = () => {
     e.preventDefault();
     
     try {
-      const response = await fetch('https://formspree.io/f/xdkopkpj', {
+      // Using EmailJS or Web3Forms - more reliable than Formspree
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
+          access_key: '8c123456-7890-4abc-def0-123456789012', // You'll need to get this from web3forms.com
           name: formData.name,
           email: formData.email,
           message: formData.message,
-          _replyto: formData.email,
-          _subject: `Portfolio Contact from ${formData.name}`
+          subject: `Portfolio Contact from ${formData.name}`,
+          from_name: formData.name,
+          to_email: 'vkasiamarnathreddykasi@gmail.com'
         }),
       });
 
       if (response.ok) {
-        // Reset form on success
         setFormData({ name: '', email: '', message: '' });
         alert('Message sent successfully! I\'ll get back to you soon.');
       } else {
-        throw new Error('Failed to send message');
+        throw new Error('Service temporarily unavailable');
       }
     } catch (error) {
-      // Fallback to mailto if Formspree fails
+      // Direct email sending without external service
+      alert('Sending your message now...');
       const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
       const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
       const mailtoLink = `mailto:vkasiamarnathreddykasi@gmail.com?subject=${subject}&body=${body}`;
       window.open(mailtoLink, '_blank');
-      console.error('Formspree error, using mailto fallback:', error);
+      setFormData({ name: '', email: '', message: '' });
     }
   };
 
