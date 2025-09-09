@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import profileImage from '@/assets/profile-kasi.jpg';
+const profileImage = '/lovable-uploads/e141fe13-fcd6-435e-be19-a286bbc37b78.png';
 
 gsap.registerPlugin(ScrollTrigger);
 

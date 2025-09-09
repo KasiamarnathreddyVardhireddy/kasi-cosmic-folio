@@ -83,29 +83,31 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <h1 
-          ref={headlineRef}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-gradient glow-intense leading-tight"
-        >
-          Hi, I'm Kasi Amarnath Reddy
-          <br />
-          <span className="text-4xl md:text-5xl lg:text-6xl">Web Developer</span>
-        </h1>
-        
-        <p 
-          ref={subtitleRef}
-          className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto"
-        >
-          Skilled in Java, Python, SQL & Web Development
-        </p>
-        
-        <Button 
-          ref={ctaRef}
-          onClick={handleHireMe}
-          className="bg-gradient-primary hover:bg-gradient-secondary text-white px-8 py-4 text-lg font-semibold rounded-xl glow-blue hover:glow-intense transition-all duration-300 transform hover:scale-105"
-        >
-          Hire Me
-        </Button>
+        <div className="glass rounded-3xl p-8 md:p-12 backdrop-blur-lg border border-white/10">
+          <h1 
+            ref={headlineRef}
+            className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-gradient glow-intense leading-tight"
+          >
+            Hi, I'm Kasi Amarnath Reddy
+            <br />
+            <span className="text-4xl md:text-5xl lg:text-6xl">Web Developer</span>
+          </h1>
+          
+          <p 
+            ref={subtitleRef}
+            className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto"
+          >
+            Skilled in Java, Python, SQL & Web Development
+          </p>
+          
+          <Button 
+            ref={ctaRef}
+            onClick={handleHireMe}
+            className="bg-gradient-primary hover:bg-gradient-secondary text-white px-8 py-4 text-lg font-semibold rounded-xl glow-blue hover:glow-intense transition-all duration-300 transform hover:scale-105"
+          >
+            Hire Me
+          </Button>
+        </div>
       </div>
     </section>
   );

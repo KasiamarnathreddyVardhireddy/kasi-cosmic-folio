@@ -89,7 +89,8 @@ const ContactSection = () => {
     const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
     const mailtoLink = `mailto:vkasiamarnathreddykasi@gmail.com?subject=${subject}&body=${body}`;
     
-    window.location.href = mailtoLink;
+    // Open email client
+    window.open(mailtoLink, '_blank');
     
     // Reset form
     setFormData({ name: '', email: '', message: '' });
@@ -202,6 +203,18 @@ const ContactSection = () => {
                 <div className="flex items-center space-x-3">
                   <Phone className="w-5 h-5 text-neon-violet" />
                   <span className="text-sm">+91 9182175363</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Linkedin className="w-5 h-5 text-neon-cyan" />
+                  <a href="https://www.linkedin.com/in/kasiamarnathreddy-vardhireddy-99a877251" target="_blank" rel="noopener noreferrer" className="text-sm hover:text-neon-cyan transition-colors">
+                    LinkedIn Profile
+                  </a>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Github className="w-5 h-5 text-neon-pink" />
+                  <a href="https://github.com/KasiamarnathreddyVardhireddy" target="_blank" rel="noopener noreferrer" className="text-sm hover:text-neon-pink transition-colors">
+                    GitHub Profile
+                  </a>
                 </div>
               </div>
             </div>
