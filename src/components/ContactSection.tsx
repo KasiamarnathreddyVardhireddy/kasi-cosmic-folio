@@ -81,19 +81,39 @@ const ContactSection = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Create mailto link
-    const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
-    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
-    const mailtoLink = `mailto:vkasiamarnathreddykasi@gmail.com?subject=${subject}&body=${body}`;
-    
-    // Open email client
-    window.open(mailtoLink, '_blank');
-    
-    // Reset form
-    setFormData({ name: '', email: '', message: '' });
+    try {
+      const response = await fetch('https://formspree.io/f/xdkopkpj', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          _replyto: formData.email,
+          _subject: `Portfolio Contact from ${formData.name}`
+        }),
+      });
+
+      if (response.ok) {
+        // Reset form on success
+        setFormData({ name: '', email: '', message: '' });
+        alert('Message sent successfully! I\'ll get back to you soon.');
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      // Fallback to mailto if Formspree fails
+      const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
+      const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
+      const mailtoLink = `mailto:vkasiamarnathreddykasi@gmail.com?subject=${subject}&body=${body}`;
+      window.open(mailtoLink, '_blank');
+      console.error('Formspree error, using mailto fallback:', error);
+    }
   };
 
   const socialLinks = [
