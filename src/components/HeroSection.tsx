@@ -71,7 +71,8 @@ const HeroSection = () => {
           width="100%" 
           height="100%"
           className="w-full h-full"
-          style={{ pointerEvents: 'none' }}
+          style={{ pointerEvents: 'none', border: 'none' }}
+          sandbox="allow-scripts allow-same-origin"
         />
       </div>
 

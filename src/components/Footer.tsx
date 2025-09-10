@@ -91,34 +91,22 @@ const Footer = () => {
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          {/* Center - Name */}
-          <div className="text-center md:text-left">
-            <h2 className="text-2xl font-bold text-gradient mb-2">
-              Kasi Amarnath Reddy
-            </h2>
-            <p className="text-muted-foreground text-sm">
-              Full Stack Developer
-            </p>
-          </div>
-
-          <div className="flex justify-center md:justify-end">
-            <div className="flex space-x-4">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="glass p-3 rounded-lg hover:glow-blue transition-all duration-300 hover:scale-110 group"
-                  aria-label={social.label}
-                >
-                  <div className="group-hover:text-neon-blue transition-colors duration-300">
-                    {social.icon}
-                  </div>
-                </a>
-              ))}
-            </div>
+        <div className="flex justify-center">
+          <div className="flex space-x-4">
+            {socialLinks.map((social, index) => (
+              <a
+                key={index}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass p-3 rounded-lg hover:glow-blue transition-all duration-300 hover:scale-110 group"
+                aria-label={social.label}
+              >
+                <div className="group-hover:text-neon-blue transition-colors duration-300">
+                  {social.icon}
+                </div>
+              </a>
+            ))}
           </div>
         </div>
 
