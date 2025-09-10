@@ -153,6 +153,45 @@ const AboutSection = () => {
                 ))}
               </div>
             </div>
+
+            {/* Education Section */}
+            <div>
+              <h3 className="text-2xl font-semibold mb-6 text-foreground">🎓 Education</h3>
+              <div className="space-y-6">
+                <div className="glass rounded-xl p-6 hover:glow-blue transition-all duration-300">
+                  <h4 className="text-lg font-semibold text-foreground mb-2">
+                    Kalasalingam Academy of Research and Education, Krishnan Koil
+                  </h4>
+                  <p className="text-muted-foreground mb-1">Bachelor of Technology in Computer Science and Engineering</p>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-muted-foreground">2022 – 2026</span>
+                    <span className="text-sm font-medium text-primary">CGPA: 8.27/10.0</span>
+                  </div>
+                </div>
+
+                <div className="glass rounded-xl p-6 hover:glow-blue transition-all duration-300">
+                  <h4 className="text-lg font-semibold text-foreground mb-2">
+                    Sri Chaitanya Junior College, Vijayawada, A.P
+                  </h4>
+                  <p className="text-muted-foreground mb-1">Pre-University Course (PUC)</p>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-muted-foreground">2020 – 2022</span>
+                    <span className="text-sm font-medium text-primary">Percentage: 84%</span>
+                  </div>
+                </div>
+
+                <div className="glass rounded-xl p-6 hover:glow-blue transition-all duration-300">
+                  <h4 className="text-lg font-semibold text-foreground mb-2">
+                    ZP High School, Kadapa, A.P
+                  </h4>
+                  <p className="text-muted-foreground mb-1">Secondary School</p>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-muted-foreground">2019 – 2020</span>
+                    <span className="text-sm font-medium text-primary">Percentage: 100%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
