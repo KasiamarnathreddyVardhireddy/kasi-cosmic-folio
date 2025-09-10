@@ -154,107 +154,129 @@ const ContactSection = () => {
           Get In Touch
         </h2>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8">
           {/* Contact Form */}
-          <form 
-            ref={formRef}
-            onSubmit={handleSubmit}
-            className="glass rounded-2xl p-8 space-y-6"
-          >
-            <div>
-              <Input
-                name="name"
-                placeholder="Your Name"
-                value={formData.name}
-                onChange={handleInputChange}
-                required
-                className="glass border-foreground/20 focus:border-neon-blue focus:glow-blue transition-all duration-300"
-              />
-            </div>
-            
-            <div>
-              <Input
-                name="email"
-                type="email"
-                placeholder="Your Email"
-                value={formData.email}
-                onChange={handleInputChange}
-                required
-                className="glass border-foreground/20 focus:border-neon-blue focus:glow-blue transition-all duration-300"
-              />
-            </div>
-            
-            <div>
-              <Textarea
-                name="message"
-                placeholder="Your Message"
-                value={formData.message}
-                onChange={handleInputChange}
-                required
-                rows={5}
-                className="glass border-foreground/20 focus:border-neon-blue focus:glow-blue transition-all duration-300 resize-none"
-              />
-            </div>
-            
-            <Button
-              type="submit"
-              className="w-full bg-gradient-primary hover:bg-gradient-secondary text-white glow-blue hover:glow-intense transition-all duration-300 transform hover:scale-105 py-3"
+          <div className="space-y-6">
+            <form 
+              ref={formRef}
+              onSubmit={handleSubmit}
+              className="glass rounded-2xl p-8 space-y-6 hover:glow-blue transition-all duration-300"
             >
-              Send Message
-            </Button>
-          </form>
-
-          {/* Contact Info & Social Links */}
-          <div className="space-y-8">
-            <div className="glass rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-gradient mb-6">
-                Let's Connect
-              </h3>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                I'm always open to discussing new opportunities, innovative projects, 
-                or just having a conversation about technology and development.
-              </p>
+              <h3 className="text-2xl font-bold text-gradient mb-6">Send Message</h3>
+              <div>
+                <Input
+                  name="name"
+                  placeholder="Your Name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                  className="glass border-foreground/20 focus:border-neon-blue focus:glow-blue transition-all duration-300"
+                />
+              </div>
               
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <Mail className="w-5 h-5 text-neon-blue" />
-                  <span className="text-sm">vkasiamarnathreddykasi@gmail.com</span>
+              <div>
+                <Input
+                  name="email"
+                  type="email"
+                  placeholder="Your Email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                  className="glass border-foreground/20 focus:border-neon-blue focus:glow-blue transition-all duration-300"
+                />
+              </div>
+              
+              <div>
+                <Textarea
+                  name="message"
+                  placeholder="Your Message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  required
+                  rows={5}
+                  className="glass border-foreground/20 focus:border-neon-blue focus:glow-blue transition-all duration-300 resize-none"
+                />
+              </div>
+              
+              <Button
+                type="submit"
+                className="w-full bg-gradient-primary hover:bg-gradient-secondary text-white glow-blue hover:glow-intense transition-all duration-300 transform hover:scale-105 py-3"
+              >
+                Send Message
+              </Button>
+            </form>
+          </div>
+
+          {/* Contact Info Cards */}
+          <div className="space-y-6">
+            {/* Professional Info Card */}
+            <div className="glass rounded-2xl p-6 hover:glow-violet transition-all duration-300">
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center">
+                  <Mail className="w-6 h-6 text-white" />
                 </div>
-                <div className="flex items-center space-x-3">
-                  <Phone className="w-5 h-5 text-neon-violet" />
-                  <span className="text-sm">+91 9182175363</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Linkedin className="w-5 h-5 text-neon-cyan" />
-                  <a href="https://www.linkedin.com/in/kasiamarnathreddy-vardhireddy-99a877251" target="_blank" rel="noopener noreferrer" className="text-sm hover:text-neon-cyan transition-colors">
-                    LinkedIn Profile
-                  </a>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Github className="w-5 h-5 text-neon-pink" />
-                  <a href="https://github.com/KasiamarnathreddyVardhireddy" target="_blank" rel="noopener noreferrer" className="text-sm hover:text-neon-pink transition-colors">
-                    GitHub Profile
-                  </a>
+                <div>
+                  <h4 className="text-lg font-semibold text-gradient">Email Me</h4>
+                  <p className="text-sm text-muted-foreground">Get in touch directly</p>
                 </div>
               </div>
+              <p className="text-foreground font-medium">vkasiamarnathreddykasi@gmail.com</p>
             </div>
 
-            {/* Social Links */}
-            <div ref={socialsRef} className="flex justify-center space-x-6">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`glass p-4 rounded-xl transition-all duration-300 hover:scale-110 hover:glow-blue ${social.color} group`}
-                  aria-label={social.label}
-                >
-                  <div className="group-hover:scale-110 transition-transform duration-300">
-                    {social.icon}
-                  </div>
-                </a>
-              ))}
+            {/* Phone Contact Card */}
+            <div className="glass rounded-2xl p-6 hover:glow-cyan transition-all duration-300">
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="w-12 h-12 bg-gradient-secondary rounded-full flex items-center justify-center">
+                  <Phone className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-gradient">Call Me</h4>
+                  <p className="text-sm text-muted-foreground">Available for calls</p>
+                </div>
+              </div>
+              <p className="text-foreground font-medium">+91 9182175363</p>
+            </div>
+
+            {/* LinkedIn Card */}
+            <div className="glass rounded-2xl p-6 hover:glow-pink transition-all duration-300">
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="w-12 h-12 bg-neon-cyan/20 rounded-full flex items-center justify-center">
+                  <Linkedin className="w-6 h-6 text-neon-cyan" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-gradient">LinkedIn</h4>
+                  <p className="text-sm text-muted-foreground">Professional network</p>
+                </div>
+              </div>
+              <a 
+                href="https://www.linkedin.com/in/kasiamarnathreddy-vardhireddy-99a877251" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-neon-cyan hover:text-neon-blue transition-colors font-medium"
+              >
+                Connect on LinkedIn
+              </a>
+            </div>
+
+            {/* GitHub Card */}
+            <div className="glass rounded-2xl p-6 hover:glow-blue transition-all duration-300">
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="w-12 h-12 bg-neon-blue/20 rounded-full flex items-center justify-center">
+                  <Github className="w-6 h-6 text-neon-blue" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-gradient">GitHub</h4>
+                  <p className="text-sm text-muted-foreground">View my projects</p>
+                </div>
+              </div>
+              <a 
+                href="https://github.com/KasiamarnathreddyVardhireddy" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-neon-blue hover:text-neon-violet transition-colors font-medium"
+              >
+                Browse Code Repository
+              </a>
             </div>
           </div>
         </div>

@@ -91,31 +91,13 @@ const Footer = () => {
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="flex justify-center">
-          <div className="flex space-x-4">
-            {socialLinks.map((social, index) => (
-              <a
-                key={index}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glass p-3 rounded-lg hover:glow-blue transition-all duration-300 hover:scale-110 group"
-                aria-label={social.label}
-              >
-                <div className="group-hover:text-neon-blue transition-colors duration-300">
-                  {social.icon}
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-
         {/* Copyright */}
-        <div className="mt-8 pt-8 border-t border-foreground/10 text-center">
+        <div className="text-center">
           <p className="text-muted-foreground text-sm">
             © 2024 Kasi Amarnath Reddy Vardhireddy. Built with ❤️ using React & GSAP
           </p>
         </div>
+
       </div>
     </footer>
   );
