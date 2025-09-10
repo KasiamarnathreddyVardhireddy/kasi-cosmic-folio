@@ -91,25 +91,9 @@ const Footer = () => {
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="grid md:grid-cols-3 gap-8 items-center">
-          {/* Navigation */}
-          <div>
-            <h3 className="text-lg font-semibold text-gradient mb-4">Navigation</h3>
-            <nav className="flex flex-wrap gap-4">
-              {navItems.map((item, index) => (
-                <a
-                  key={index}
-                  href={item.href}
-                  className="text-muted-foreground hover:text-neon-blue transition-colors duration-300 text-sm"
-                >
-                  {item.name}
-                </a>
-              ))}
-            </nav>
-          </div>
-
+        <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Center - Name */}
-          <div className="text-center">
+          <div className="text-center md:text-left">
             <h2 className="text-2xl font-bold text-gradient mb-2">
               Kasi Amarnath Reddy
             </h2>
@@ -118,7 +102,6 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Social Links */}
           <div className="flex justify-center md:justify-end">
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
