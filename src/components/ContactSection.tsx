@@ -85,20 +85,17 @@ const ContactSection = () => {
     e.preventDefault();
     
     try {
-      // Using EmailJS or Web3Forms - more reliable than Formspree
-      const response = await fetch('https://api.web3forms.com/submit', {
+      const response = await fetch('https://formspree.io/f/xvgblzrv', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          access_key: '8c123456-7890-4abc-def0-123456789012', // You'll need to get this from web3forms.com
           name: formData.name,
           email: formData.email,
           message: formData.message,
-          subject: `Portfolio Contact from ${formData.name}`,
-          from_name: formData.name,
-          to_email: 'vkasiamarnathreddykasi@gmail.com'
+          _replyto: formData.email,
+          _subject: `Portfolio Contact from ${formData.name}`
         }),
       });
 

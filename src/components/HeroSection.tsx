@@ -90,7 +90,7 @@ const HeroSection = () => {
           >
             Hi, I'm Kasi Amarnath Reddy
             <br />
-            <span className="text-4xl md:text-5xl lg:text-6xl">Web Developer</span>
+            <span className="text-4xl md:text-5xl lg:text-6xl">Full Stack Developer</span>
           </h1>
           
           <p 
