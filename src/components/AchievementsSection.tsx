@@ -1,20 +1,23 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Medal } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const achievements = [
   {
-    position: '🥇 1st Place',
+    position: '1st Place',
     event: 'ML Storm Hackathon',
     project: 'Student performance prediction system',
+    medalColor: 'text-yellow-500',
     gradient: 'from-yellow-400 to-orange-500'
   },
   {
-    position: '🥈 2nd Place',
+    position: '2nd Place',
     event: 'Apex Code Re-engineering Challenge',
     project: 'E-commerce platform with chatbot & live cart',
+    medalColor: 'text-gray-400',
     gradient: 'from-gray-300 to-gray-500'
   }
 ];
@@ -81,9 +84,12 @@ const AchievementsSection = () => {
               className="glass rounded-2xl p-8 hover:glow-violet transition-all duration-300 hover:scale-105 group"
             >
               <div className="text-center">
-                <h3 className="text-3xl font-bold text-gradient mb-2 group-hover:scale-110 transition-transform duration-300">
-                  {achievement.position}
-                </h3>
+                <div className="flex items-center justify-center gap-3 mb-2">
+                  <Medal className={`w-8 h-8 ${achievement.medalColor} group-hover:scale-110 transition-transform duration-300`} />
+                  <h3 className="text-3xl font-bold text-gradient group-hover:scale-110 transition-transform duration-300">
+                    {achievement.position}
+                  </h3>
+                </div>
                 <h4 className="text-xl font-semibold text-neon-blue mb-4">
                   {achievement.event}
                 </h4>
