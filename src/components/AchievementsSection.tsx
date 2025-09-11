@@ -10,14 +10,14 @@ const achievements = [
     position: '1st Place',
     event: 'ML Storm Hackathon',
     project: 'Student performance prediction system',
-    medalColor: 'text-yellow-500',
+    medalColor: 'text-primary glow-blue',
     gradient: 'from-yellow-400 to-orange-500'
   },
   {
     position: '2nd Place',
     event: 'Apex Code Re-engineering Challenge',
     project: 'E-commerce platform with chatbot & live cart',
-    medalColor: 'text-gray-400',
+    medalColor: 'text-accent glow-violet',
     gradient: 'from-gray-300 to-gray-500'
   }
 ];
