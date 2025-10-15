@@ -65,14 +65,18 @@ const HeroSection = () => {
         ref={splineRef}
         className="absolute inset-0 z-0"
       >
-        <iframe 
-          src="https://my.spline.design/claritystream-4GArueleVbMoOX2wvd0iNPHF/" 
-          frameBorder="0" 
-          width="100%" 
-          height="100%"
-          className="w-full h-full"
-          sandbox="allow-scripts allow-same-origin"
-        />
+        <div className="relative w-full h-full">
+          <iframe 
+            src="https://my.spline.design/claritystream-4GArueleVbMoOX2wvd0iNPHF/" 
+            title="3D Background Animation"
+            frameBorder="0" 
+            width="100%" 
+            height="100%"
+            className="w-full h-full absolute top-0 left-0"
+            sandbox="allow-scripts allow-same-origin"
+          />
+          <div className="absolute bottom-0 right-0 z-50 w-full h-16 bg-background/80 backdrop-blur-sm" />
+        </div>
       </div>
 
       {/* Floating Orbs */}
